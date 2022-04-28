@@ -4,6 +4,8 @@ import com.man.entities.Man;
 import com.man.repository.ManRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ManService {
 
@@ -22,4 +24,8 @@ public class ManService {
     }
 
 
+    public Optional<Man> getMan(Long manId){
+        var man = manRepository.findById(manId);
+        return man;
+    }
 }
